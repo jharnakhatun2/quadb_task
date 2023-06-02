@@ -1,11 +1,10 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 
 function SecondScreen() {
   const [showModal, setShowModal] = useState(false);
-  const { names } = useParams();
   const location = useLocation();
   console.log(location);
 
