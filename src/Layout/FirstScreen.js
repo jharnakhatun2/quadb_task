@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 function FirstScreen() {
   const { names } = useParams();
   const [movieData, setMovieData] = useState(null);
-  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,11 +24,10 @@ function FirstScreen() {
     fetchData();
   }, []);
 
-
   return (
     <div>
       <section className="container py-5">
-        <h2 className="text-center mb-4">Now Showing</h2>
+        <h2 className="text-center mb-4 bg-danger p-2 text-white text-uppercase">Watch Your Favourite Movies</h2>
         <div className="row ">
           {movieData?.map(({ show }) => {
             return (
@@ -55,13 +53,14 @@ function FirstScreen() {
                     <p className="card-text">{show.summary.slice(0, 100)}</p>
                   </div>
                   <div className="card-body">
-                    
                     <Link to={show.name} state={show}>
-                    <button type="button" className="btn btn-warning btn-lg btn-block">
-                      View Details
+                      <button
+                        type="button"
+                        className="btn btn-warning btn-lg btn-block"
+                      >
+                        View Details
                       </button>
                     </Link>
-                    
                   </div>
                 </div>
               </div>
